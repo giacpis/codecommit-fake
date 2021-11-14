@@ -5,10 +5,5 @@ Resources:
     jenkinsSG:
       Type: AWS::EC2::SecurityGroup
       Properties:
-        GroupDescription: Test-Jenkins Security Grouè
+        GroupDescription: Test-Jenkins Security Group
         VpcId: 'vpc-0d10aff79f4333de1'
-        Tags:
-          - Key: environment
-            Value: jenkins-test
-          - Key: Name
-            Value: jenkins-security-group
