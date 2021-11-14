@@ -1,1 +1,30 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'test with jenkins'
 
+Parameters:
+
+  CandidateName:
+    Description: 'Please input your first and last name:'
+    Type: String
+    MaxLength: '50'
+    MinLength: '3'
+    ConstraintDescription: Please input your full name.
+    
+  SAVPC:
+    Description: 'Id of the VPC'
+    Type: String
+    MaxLength: '50'
+    MinLength: '3'
+    ConstraintDescription: Please input your full name.
+
+Resources:
+    SASGapp:
+      Type: AWS::EC2::SecurityGroup
+      Properties:
+        GroupDescription: Test-Jenkins Security Grouè
+        VpcId: !Ref 'SAVPC'
+        Tags:
+          - Key: environment
+            Value: sa-assignment
+          - Key: Name
+            Value: AppServerSecurityGroup
